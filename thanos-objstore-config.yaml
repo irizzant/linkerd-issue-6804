@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  thanos.yaml: dHlwZTogczMKY29uZmlnOgogIGJ1Y2tldDogdGhhbm9zCiAgZW5kcG9pbnQ6IHRoYW5vcy1taW5pbzo5MDAwCiAgYWNjZXNzX2tleTogbWluaW8KICBzZWNyZXRfa2V5OiBtaW5pbzEyMwogIGluc2VjdXJlOiB0cnVlCg==
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: thanos-objstore-config
+  namespace: monitoring
