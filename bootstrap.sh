@@ -1,6 +1,6 @@
 #!/bin/bash
 
-k3d cluster create --k3s-server-arg --disable=traefik --wait
+k3d cluster create --k3s-arg "--disable=traefik@server:0" --wait
 
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
@@ -20,4 +20,4 @@ kubectl -n monitoring apply -f thanos-objstore-config.yaml
 
 helm install prometheus -n monitoring -f values-prometheus.yaml --version 17.1.0 prometheus-community/kube-prometheus-stack
 
-helm install thanos --values=values-thanos.yaml --namespace monitoring bitnami/thanos
+helm install thanos --version 8.2.5 --values=values-thanos.yaml --namespace monitoring bitnami/thanos

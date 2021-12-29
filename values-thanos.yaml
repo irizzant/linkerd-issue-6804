@@ -11,12 +11,12 @@ metrics:
   serviceMonitor:
     enabled: true
 minio:
-  accessKey:
-    password: minio
+  auth:
+    rootUser: minio
+    rootPassword: minio123
   defaultBuckets: thanos
   enabled: true
-  secretKey:
-    password: minio123
+  
 query:
   dnsDiscovery:
     sidecarsNamespace: monitoring
